@@ -6,8 +6,8 @@ The project performs basic CRUD (Create, Read, Update, Delete) operations by usi
 Prerequisites
 =============
 
-Any web containers support JSF 2.2 like glassfish 4 and above
-maven 3
+1) Any web containers support JSF 2.2 like glassfish 4 and above
+2) maven 3
 
 Instructions
 ============

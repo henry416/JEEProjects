@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+      <title>JSF CRUD</title>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    </h:head>
+    <h:body>
+        <h3>List of Students</h3>
+        <h:form rendered="#{not empty studentBean.list}">
+            <h:dataTable value="#{studentBean.list}" var="student"
+    			styleClass="ft-table"
+    			headerClass="ft-table-header"
+    			rowClasses="ft-table-odd-row,ft-table-even-row" >
+                <h:column><f:facet name="header">Id</f:facet>#{student.id}</h:column>
+                <h:column><f:facet name="header">Name</f:facet>#{student.name}</h:column>
+                <h:column><f:facet name="header">GPA</f:facet>#{student.gpa}</h:column>
+                <h:column><h:commandLink value="edit" action="#{studentBean.edit(student)}" /></h:column>
+                <h:column><h:commandLink value="delete" action="#{studentBean.delete(student)}" /></h:column>
+            </h:dataTable>
+        </h:form>
+        <h:panelGroup rendered="#{empty studentBean.list}">
+            <p>Table is empty! Please add new students.</p>
+        </h:panelGroup>
+        <h:panelGroup rendered="#{!studentBean.edit}">
+            <h3>Add student</h3>
+            <h:form>
+                <p>Name: <h:inputText value="#{studentBean.student.name}" /></p>
+                <p>GPA: <h:inputText value="#{studentBean.student.gpa}" /></p>
+                <p><h:commandButton value="add" action="#{studentBean.add}" /></p>
+            </h:form>
+        </h:panelGroup>
+        <h:panelGroup rendered="#{studentBean.edit}">
+            <h3>Edit student with id = #{studentBean.student.id}</h3>
+            <h:form>
+                <p>Name: <h:inputText value="#{studentBean.student.name}" /></p>
+                <p>GPA: <h:inputText value="#{studentBean.student.gpa}" /></p>
+                <p><h:commandButton value="save" action="#{studentBean.save}" /></p>
+            </h:form>
+        </h:panelGroup>
+    </h:body>
+</html>

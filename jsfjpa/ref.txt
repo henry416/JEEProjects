@@ -1,0 +1,9 @@
+http://www.java2s.com/Code/Java/EJB3/UsePersistenceContextannotationtoLinkPersistenceContext.htm
+http://www.avaje.org/persistencecontext.html
+Take a look at http://download.oracle.com/javaee/5/api/javax/persistence/EntityManager.html
+
+EntityManager is an interface with methods for interacting with the persistence context, such as persist, update, delete and so on...
+
+Good definition here http://docs.jboss.org/hibernate/entitymanager/3.5/reference/en/html/architecture.html
+
+The @PersistenceContext is the anotation for the injection of the current persistence context 

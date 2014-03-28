@@ -85,9 +85,19 @@ java org.jboss.weld.environment.se.StartMain". For detail, refer to https://docs
   
   (Remember the jar file execution point is org.jboss.weld.environment.se.StartMain)
   
-9. Further Exploration
+9. What about test
+
+For unit tests also a src/test/resources/META-INF/beans.xml is needed. 
+
+WeldJUnit4Runner - Needed to run junit tests containing injection points.
+  
+10. Further Reading
 
 http://cdi-spec.org/
 
 http://weld.cdi-spec.org/
+
+11 Second Opinion
+
+http://blog.rocketscience.io/dependency-injection-with-cdi-in-java-se/
 

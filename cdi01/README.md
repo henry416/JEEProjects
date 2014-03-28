@@ -45,11 +45,13 @@ the META-INF or WEB-INF directory), CDI will not be able to use injection, inter
 
 PROJECT 
 =======
-This project demonstrates @INJECT a POJO class to a calling class by using WELD SE container.
+This project demonstrates @INJECT a POJO class to a calling class by using WELD SE.
 
-(1) @INJECT
+(1) beans.xml => enable CDI (bean-discovery-mode)
 
-(2) beans.xml
+(2) @INJECTED => inject the POJO class
+
+(3) @Observes ContainerInitialized event => A method to observe ContainerInitialized event to boostrap CDI SE (@observe anotation)
 
 STEPS
 =====
@@ -72,9 +74,10 @@ http://mvnrepository.com/artifact/org.jboss.weld/weld-se/1.0.1-Final
   
 7. execute
 
-It's not executing "henry416.StudentCdiClient.Main". Instead, the starting point is "org.jboss.weld.environment.se.StartMain"
-
   mvn exec:java -Dexec.mainClass="org.jboss.weld.environment.se.StartMain"
+  
+  The Weld SE module comes with a built-in main method which will bootstrap CDI for you and then fire a ContainerInitialized event. The entry point for your application code would therefore be a simple bean which observes the ContainerInitialized event. The application can be started by calling method "
+java org.jboss.weld.environment.se.StartMain". For detail, refer to https://docs.jboss.org/weld/reference/latest/en-US/html/environments.html
 
 8. package
 

@@ -1,6 +1,6 @@
 This is a simple EJB 3 project to demonstrate 
 1)a simple EJB bean with @Remote interface
-2)a java client to call the EJB in Glassfish
+2)a web client using Servlet 3 to call the EJB in Glassfish
 
 1. Create Directory / Files
 ===========================

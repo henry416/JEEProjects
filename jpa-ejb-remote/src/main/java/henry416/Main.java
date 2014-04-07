@@ -1,7 +1,6 @@
 package henry416;
 import javax.ejb.*;
 import javax.naming.*;
-import java.util.List;
 
 
 public class Main {

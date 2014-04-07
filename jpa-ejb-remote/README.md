@@ -110,4 +110,11 @@ java -classpath C:\glassfish4\glassfish\lib\javaee.jar;C:\glassfish4\glassfish\l
 
 asadmin undeploy jpa-ejb-remote-1.0
 
+4. Some references
+===================
 
+http://stuetzpunkt.wordpress.com/2014/01/06/create-jdbc-resources-on-glassfish-4-with-glassfish-resources-xml/
+
+https://blogs.oracle.com/enterprisetechtips/entry/datasource_resource_definition_in_java
+
+https://blogs.oracle.com/JagadishPrasath/entry/application_scoped_resources_in_glassfish

@@ -103,13 +103,13 @@ asadmin start-domain
 
 asadmin start-database
 
-asadmin deploy target\jpa-ejb-remote-1.0.jar
+asadmin deploy target\ejb-remote.jar
 
 cd target\classes
 
 java -classpath C:\glassfish4\glassfish\lib\javaee.jar;C:\glassfish4\glassfish\lib\appserv-rt.jar;. henry416.Main
 
-asadmin undeploy jpa-ejb-remote-1.0
+asadmin undeploy ejb-remote
 
 4. Some references
 ===================

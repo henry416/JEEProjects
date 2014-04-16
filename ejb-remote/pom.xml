@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>henry416</groupId>
-    <artifactId>jpa-ejb-remote</artifactId>
+    <artifactId>ejb-remote</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <dependencies>
@@ -18,4 +18,7 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
+    <build>
+        <finalName>${artifactId}</finalName>
+    </build>
 </project>

@@ -80,16 +80,17 @@ asadmin undeploy test
 
 http://www.developer.com/java/ent/integrating-jpa-jsf-and-ejb-in-java-ee7-applications.html
 
-Since JSF 2.2 we consider the old style @ManagedBean annotation deprecated, but what now you would say? Well it is pretty straightforward.
+Changes on JSF 2.2
+------------------
+
+Since JSF 2.2 we consider the old style @ManagedBean annotation deprecated
 
 1. Change @ManagedBean(name="xxx") to @Named("xxx")
+
 2. Change the package imports for your @XXXScoped annotations to the CDI equivalents.
 
-From	To
+From						To
 javax.faces.bean.ApplicationScoped	javax.enterprise.context.ApplicationScoped
 javax.faces.bean.RequestScoped	javax.enterprise.context.RequestScoped
 javax.faces.bean.SessionScoped	javax.enterprise.context.SessionScoped
-javax.faces.bean.ViewScoped	javax.faces.view.ViewScoped
-Note JSF 2.2 supports more scopes, but they are new so they are not mentioned in the table above. Future blog entries will touch on those new scopes.
-
-And that is it.
+javax.faces.bean.ViewScoped		javax.faces.view.ViewScoped

@@ -1,5 +1,6 @@
 The project uses EJB remote interface from a Java Clientto to test EJB and JPA on Glassfish 4
 
+
 1. Create a project directory
 =============================
 
@@ -14,6 +15,7 @@ mkdir src\main\resources\META-INF
 
 pom.xml
 -------
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>

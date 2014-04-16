@@ -1,5 +1,4 @@
-The project to test EJB and JPA on Glassfish 4 using EJB remote interface from a Java Client
-
+The project uses EJB remote interface from a Java Clientto to test EJB and JPA on Glassfish 4
 
 1. Create a project directory
 =============================

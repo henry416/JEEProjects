@@ -1,9 +1,12 @@
 This is a simple EJB 3 project to demonstrate 
+
 1)a simple EJB bean with @Remote interface
+
 2)a web client using Servlet 3 to call the EJB in Glassfish
 
 1. Create Directory / Files
 ===========================
+
 mkdir simple-ejb3
 cd simple-ejb3/
 mkdir target
@@ -18,23 +21,30 @@ gedit target/WEB-INF/web.xml
 
 2. Compile, Package, and Deploy to Glassfish
 ============================================
+
 export JAVAEE_HOME=~/App/glassfish4/glassfish
+
 cd target/WEB-INF/classes
+
 javac -d . -classpath $JAVAEE_HOME/lib/javaee.jar:. ../src/foo/*.java
+
 jar cvf $JAVAEE_HOME/domains/domain1/autodeploy/simple-ejb3-web.war *
 
 asadmin list-applications
 
 3. Run the client to call the remote EJB
 =========================================
+
 http://localhost:8080/simple-ejb3-web/fooServlet
 
 4. Undeploy the EJB from Glassfish
 ==================================
+
 asadmin undeploy simple-ejb3-web
 
 Directory
 =========
+
 ls -ld $(find .)
 -rw-r--r-- 1 henry henry 2671 2014-04-06 12:02 ./README.md
 drwxr-xr-x 3 henry henry 4096 2014-04-06 10:57 ./src
@@ -53,6 +63,7 @@ drwxr-xr-x 2 henry henry 4096 2014-04-06 11:57 ./target/WEB-INF/classes/foo
 
 ./src/foo/FooRemote.java
 =========================
+
 package foo;
 import javax.ejb.Remote;  
  
@@ -75,6 +86,7 @@ public class FooBean implements FooRemote {
 
 ./src/foo/FooServlet.java
 ==========================
+
 package foo;
 import java.io.*;
 import javax.ejb.EJB;

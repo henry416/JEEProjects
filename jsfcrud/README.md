@@ -1,7 +1,8 @@
 JSFCRUD
 =======
 
-The project performs basic CRUD (Create, Read, Update, Delete) operations by using JSF 2.2. The CRUD operation here is non-persistent in nature.
+A project performs basic CRUD (Create, Read, Update, Delete) operations by using JSF 2.2. 
+The CRUD operation here is non-persistent in nature.
 
 Prerequisites
 =============

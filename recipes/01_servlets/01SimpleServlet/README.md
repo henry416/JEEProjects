@@ -23,6 +23,11 @@ being made and dispatches them to the appropriate methods for request handling. 
 method is optional. Finally, the container calls the servlet’s destroy method, which takes care of finalizing the servlet
 and taking it out of service.
 
+Deployment Descriptor (DD)
+--------------------------
+
+Registering servlets in the web.xml file
+
 API
 ---
 javac -cp C:\glassfish4\glassfish\modules\javax.servlet-api.jar SimpleServlet.java

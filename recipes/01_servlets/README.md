@@ -38,3 +38,22 @@ host:port/war_name/url_pattern
 9) asadmin undeploy 01SimpleServlet
 
 10) mvn clean
+
+02ServletNoDD
+--------------
+
+1) copy the above clean directories/files as 02ServletNoDD
+
+2) modify pom.xml to 02ServletNoDD
+
+3) rename SimpleServlet.java to ServletNoDD.java, and modify as the following
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet(name = "ServletNoDD", urlPatterns = {"/ServletNoDD"})
+public class ServletNoDD extends HttpServlet {
+
+4) remove web.xml
+
+5) http://localhost:8080/02ServletNoDD/ServletNoDD
+

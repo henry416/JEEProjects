@@ -16,8 +16,7 @@ public class SessionServlet extends HttpServlet {
  
    // Set up a session attribute
 
-      String email = (String)              
-      session.getAttribute ("session.email");         
+      String email = (String) session.getAttribute ("session.email");         
       if (email == null) {
           email = req.getParameter("email");         
           session.setAttribute ("session.email", email);       

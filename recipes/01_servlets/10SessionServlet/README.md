@@ -8,6 +8,15 @@ How
 Make use of session attributes to retain session-based information. To do so, use the HttpServletRequest object to obtain
 access to the session, and then use the getAttribute() and setAttribute() methods accordingly.
 
+// Obtain the Session object
+HttpSession session = req.getSession(true);
+// Set up a session attribute
+String email = (String) session.getAttribute ("session.email");
+if (email == null) {
+email = req.getParameter("email");
+session.setAttribute ("session.email", email);
+}
+
 Programs
 --------
 

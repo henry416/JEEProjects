@@ -57,6 +57,8 @@ asadmin deploy target\12Dispatcher.war
 
 http://localhost:8080/12Dispatcher/TestDispatcherServlet1
 
+http://localhost:8080/12Dispatcher/TestDispatcherServlet2
+
 asadmin undeploy 12Dispatcher
 
 mvn clean

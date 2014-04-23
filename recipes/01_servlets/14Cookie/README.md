@@ -58,5 +58,7 @@ http://www.javatpoint.com/cookies-in-servlet
 
 http://www.javatpoint.com/servlet-login-and-logout-example-using-cookies
 
+http://www.journaldev.com/1907/java-servlet-session-management-tutorial-with-examples-of-cookies-httpsession-and-url-rewriting
+
 http://www.journaldev.com/1956/servlet-cookie-example-tutorial
 

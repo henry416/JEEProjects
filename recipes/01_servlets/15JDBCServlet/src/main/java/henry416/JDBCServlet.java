@@ -64,8 +64,13 @@ public class JDBCServlet extends HttpServlet {
 		} catch (SQLException e) {
 		  out.println("SQLException: " + e.getMessage());
 		}
-		  finally {            
-				out.close();
+		  finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				out.println("SQLException: " + e.getMessage());
+			}
+			out.close();
 		}
 	}
 

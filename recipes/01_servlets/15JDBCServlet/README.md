@@ -1,7 +1,7 @@
 15JDBCServlet
 --------------
 
-A Servlet to connect to mysql via JDBC directly without using JDNI, and run a query to display a table
+	A Servlet to connect to mysql via JDBC directly without using JDNI, and run a query to display a table
 
 MySQL
 -----
@@ -25,12 +25,21 @@ MySQL
 Drop mysql jar into Glassfish
 -----------------------------
 
-	copy mysql-connector-java-5.1.30-bin.jar to C:\glassfish4\glassfish\domains\domain1\lib
+	copy mysql-connector-java-5.1.30-bin.jar C:\glassfish4\glassfish\domains\domain1\lib
+	
+Instructions
+------------
+
+	mvn clean package
+	asadmin deploy target\15JDBCServlet.war
+	http://localhost:8080/15JDBCServlet/JDBCServlet
+	asadmin undeploy 15JDBCServlet
+	mvn clean
 	
 Reference
 ---------
 
-http://www.java2s.com/Code/Java/Servlets/Database.htm
+	http://www.java2s.com/Code/Java/Servlets/Database.htm
 
-http://www.tutorialspoint.com/jdbc/index.htm
+	http://www.tutorialspoint.com/jdbc/index.htm
 

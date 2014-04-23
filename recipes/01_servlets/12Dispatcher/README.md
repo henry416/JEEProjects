@@ -52,13 +52,18 @@ To demonstrate the use of HttpServletRequest attributes, we will set an attribut
 Execution
 ---------
 mvn clean package
+
 asadmin deploy target\12Dispatcher.war
+
 http://localhost:8080/12Dispatcher/TestDispatcherServlet1
+
 asadmin undeploy 12Dispatcher
+
 mvn clean
 	
 References
 ----------
 
 http://xmelegance.org/qxservlet/request-dispatcher1.html
+
 http://xmelegance.org/qxservlet/request-dispatcher2.html	

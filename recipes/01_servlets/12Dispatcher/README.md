@@ -57,6 +57,10 @@ asadmin deploy target\12Dispatcher.war
 
 http://localhost:8080/12Dispatcher/TestDispatcherServlet1
 
+both Forward and Include, you won't see the URL changes after clicking the button
+
+the client (browser) will always think it is from the same URL which it sent request
+
 http://localhost:8080/12Dispatcher/TestDispatcherServlet2
 
 asadmin undeploy 12Dispatcher

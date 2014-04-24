@@ -1,5 +1,5 @@
-15JDBCServlet
---------------
+16JDBCDataSourceServlet
+-----------------------
 
 	A Servlet to connect to mysql via JDBC directly by JDBC DataSource (JDNI), and run a query to display a table
 

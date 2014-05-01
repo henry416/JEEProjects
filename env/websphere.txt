@@ -83,3 +83,72 @@ Labs
 ----
 	https://www.ibmdw.net/wasdev/docs/getting_started_with_the_was_liberty_profile/
 
+mvn
+===
+
+	<pluginRepository>
+		 <id>Liberty</id>
+		 <name>Liberty Repository</name>
+		 <url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+		 <layout>default</layout>
+		 <snapshots>
+		 <enabled>false</enabled>
+		 </snapshots>
+		 <releases>
+		 <enabled>true</enabled>
+	 </releases>
+	 </pluginRepository>
+
+example:
+
+	<build>
+	 <plugins>
+		<!-- Enable liberty-maven-plugin -->
+		<plugin>
+		 <groupId>com.ibm.websphere.wlp.maven.plugins</groupId>
+		 <artifactId>liberty-maven-plugin</artifactId> 
+		 <version>1.0</version>
+		 <!-- Specify configuration -->
+		 <configuration>
+			 <serverHome>/opt/IBM/wlp</serverHome> 
+			 <serverName>testServer</serverName> 
+		 </configuration> 
+		</plugin>
+	 </plugins>
+	</build> 
+
+Creating a server
+
+	Use the following command to create a server named SERVER_NAME in the directory SERVER_HOME:
+	mvn liberty:create-server -DserverHome=SERVER_HOME -DserverName=SERVER_NAME
+
+Deploying and undeploying applications
+
+	Use the following command to deploy an application that is in APPLICATION_FILE to the server named SERVER_NAME:
+	mvn liberty:deploy -DserverName=SERVER_NAME -DserverHome=SERVER_HOME -DappArchive=APPLICATION_FILE
+
+	The server must be started to deploy the application.
+	 
+	Use the following command to undeploy the same application: 
+	mvn liberty:undeploy -DserverName=SERVER_NAME -DserverHome=SERVER_HOME -DappArchive=APPLICATION_NAME
+
+	The server must be started to remove the application. In this scenario, the appArchive parameter uses the application name rather than a file path.
+
+Starting and stopping the server
+
+	Use the following command line to start a Liberty profile server instance:
+	mvn liberty:start-server -DserverHome=SERVER_HOME -DserverName=SERVER_NAME
+
+	Use the following command to stop a running server:
+	mvn liberty:stop-server -DserverHome=SERVER_HOME -DserverName=SERVER_NAME
+
+	Packaging and installing the server
+	Use the following command line to package an existing server named SERVER_NAME in a file named ARCHIVE_FILE:
+	mvn liberty:package-server -DserverName=SERVER_NAME -DserverHome=SERVER_HOME -DpackageFile=ARCHIVE_FILE
+
+	Use the following command to install a server from an archive named 
+	ARCHIVE_FILE:
+	mvn liberty:install-server -DassemblyArchive=ARCHIVE_FILE
+
+more on page 87
+

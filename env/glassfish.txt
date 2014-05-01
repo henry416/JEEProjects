@@ -1,0 +1,34 @@
+glassfish 4
+============================================
+	-- domain
+	asadmin start-domain
+	asadmin stop-domain
+	asadmin list-domains
+
+	-- derby db / java db
+	asadmin start-database --dbhome C:\henry\myderbydb
+	asadmin stop-database
+
+	-- deploy / undeploy
+	asadmin deploy hello,war
+	asadmin list-applications
+	asadmin undeploy hello
+
+	-- auto deploy
+	copy hello.war C:\glassfish4\glassfish\domains\domain1\autodeploy
+	del C:\glassfish4\glassfish\domains\domain1\autodeploy\hello.war
+
+	-- admin console
+	http://localhost:4848
+
+	-- app url
+	http://localhost:8080/hello
+
+	-- add JDBC connection pool for MySQL and then JDBC datasource
+	copy mysql-connector-java-5.1.30-bin.jar to C:\glassfish4\glassfish\domains\domain1\lib
+	asadmin stop-domain
+	asadmin start-domain
+	asadmin create-jdbc-connection-pool --datasourceclassname com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource --restype javax.sql.ConnectionPoolDataSource --property "User=test:Password=test:URL=jdbc\:mysql\://localhost\:3306/test" jdbc/testMySQLPool
+	asadmin ping-connection-pool jdbc/testMySQLPool
+	asadmin --user=admin create-jdbc-resource --connectionpoolid jdbc/testMySQLPool jdbc/testMySQL
+	asadmin list-jdbc-reources

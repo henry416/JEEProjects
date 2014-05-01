@@ -1,0 +1,7 @@
+JBOSS AS
+=============================================
+start standalone
+or
+start /B standalone
+
+jboss-cli --connect command=:shutdown

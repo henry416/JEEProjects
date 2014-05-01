@@ -1,0 +1,30 @@
+	===================
+	-- MySQL 
+	-- root => abcd1234 
+	-- test => test
+	-- C:\Documents and Settings\All Users\Application Data\MySQL
+
+	===================
+	-- start MySQL
+	start mysqld --defaults-file="C:\Documents and Settings\All Users\Application Data\MySQL\MySQL Server 5.6\my.ini"
+	or
+	net start MySQL56
+
+	-- status
+	mysqladmin -u root -p status
+	mysqladmin -u root -p ping
+
+	-- shutdown
+	mysqladmin -u root -p shutdown
+
+	-- print some variables
+	mysqladmin -u root --password=abcd1234 variables|findstr dir
+	mysqladmin -u root --password=abcd1234 variables|findstr host
+	mysqladmin -u root --password=abcd1234 variables|findstr port
+
+	mysql -u test -p
+	mysql -h localhost -u test -p
+	show databases;
+	use test;
+	show tables;
+	select * from mytest;

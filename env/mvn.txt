@@ -1,0 +1,22 @@
+
+	- compiles the sample application.
+	mvn compile
+
+	- packages the archive and installs it in the local Maven repository and deploy to local application server.
+	mvn package
+
+	- verifies that the package is valid.
+	mvn verify
+
+	- deploy to the application server
+	asadmin deploy app_name.war
+	asadmin list-applications
+
+	http://localhost:8080/app_name
+
+	- undeploy
+	asadmin undeploy app_name
+
+
+	- deletes the compilation artifacts.
+	mvn clean

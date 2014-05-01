@@ -1,0 +1,84 @@
+IBM Websphere Application Servers (WAS)
+---------------------------------------
+
+Download
+--------
+https://www.ibm.com/developerworks/downloads/ws/wasdevelopers/
+
+https://www.ibmdw.net/wasdev/downloads/
+
+Post Installation Configuration
+-------------------------------
+Profile Manager to create an application server profile
+=>create
+=>typical profile creation
+=>user: admin
+=>password: abc123
+
+	App Serv Location: C:\Program Files\IBM\WebSphere\AppServer\profiles\AppSrv01
+	...
+	Admin console port: 9060
+	Admin console secure port: 9043
+	HTTP transport port: 9080
+	HTTPS transport port: 9443
+	Bootstrap port: 2809
+	SOAP connector port: 8880
+	...
+	Run as Service: TRUE
+	
+=> set the service to manual start
+	computer=>manage=>service
+
+Admin
+=====
+
+start server
+------------
+
+Websphere...=>Profiles=>AppSrv01=>start the server
+	
+	@echo off
+	SETLOCAL
+	call "%~dp0\setupCmdLine.bat"
+	call "%WAS_HOME%\bin\startServer.bat" %*
+	ENDLOCAL & set MYERRORLEVEL=%ERRORLEVEL%
+	if defined PROFILE_CONFIG_ACTION (exit %MYERRORLEVEL%) else exit /b %MYERRORLEVEL%
+
+Stop server
+-----------
+
+Websphere...=>Profiles=>AppSrv01=>stop the server
+
+	@echo off
+	SETLOCAL
+	call "%~dp0\setupCmdLine.bat"
+	call "%WAS_HOME%\bin\stopServer.bat" %*
+	ENDLOCAL & set MYERRORLEVEL=%ERRORLEVEL%
+	if defined PROFILE_CONFIG_ACTION (exit %MYERRORLEVEL%) else exit /b %MYERRORLEVEL%
+
+Apps Admin
+----------
+
+	Websphere...=>Profiles=>AppSrv01=>Administrative Console
+
+or
+
+	http://localhost:9060/ibm/console
+	
+
+	http://localhost:9080/ivt/ivtserver?parm2=ivtservlet
+	http://localhost:9080/ivt/ivtserver?parm2=ivtAddition.jsp
+	http://localhost:9080/ivt/ivtserver?parm2=ivtejb
+
+Document
+--------
+http://pic.dhe.ibm.com/infocenter/wasinfo/v8r5/index.jsp
+
+How-To
+------
+	http://tech.ivkin.net/wiki/IBM_WebSphere_Application_Server_How_To
+	
+Labs
+----
+	https://www.ibmdw.net/wasdev/docs/getting_started_with_the_was_liberty_profile/
+

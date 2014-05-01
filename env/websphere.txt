@@ -72,6 +72,7 @@ or
 
 Document
 --------
+http://www.redbooks.ibm.com/redbooks/pdfs/sg248076.pdf
 http://pic.dhe.ibm.com/infocenter/wasinfo/v8r5/index.jsp
 
 How-To

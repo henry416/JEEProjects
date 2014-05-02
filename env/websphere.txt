@@ -1,6 +1,7 @@
 IBM Websphere Application Servers (WAS)
 ---------------------------------------
-
+	Only Support Java EE 6 so far
+	
 Download
 --------
 https://www.ibm.com/developerworks/downloads/ws/wasdevelopers/
@@ -32,40 +33,23 @@ Profile Manager to create an application server profile
 Admin
 =====
 
-start server
-------------
+	set PATH=%PATH%;C:\Program Files\IBM\WebSphere\AppServer\bin
 
-Websphere...=>Profiles=>AppSrv01=>start the server
-	
-	@echo off
-	SETLOCAL
-	call "%~dp0\setupCmdLine.bat"
-	call "%WAS_HOME%\bin\startServer.bat" %*
-	ENDLOCAL & set MYERRORLEVEL=%ERRORLEVEL%
-	if defined PROFILE_CONFIG_ACTION (exit %MYERRORLEVEL%) else exit /b %MYERRORLEVEL%
+	startServer server1
 
-Stop server
------------
-
-Websphere...=>Profiles=>AppSrv01=>stop the server
-
-	@echo off
-	SETLOCAL
-	call "%~dp0\setupCmdLine.bat"
-	call "%WAS_HOME%\bin\stopServer.bat" %*
-	ENDLOCAL & set MYERRORLEVEL=%ERRORLEVEL%
-	if defined PROFILE_CONFIG_ACTION (exit %MYERRORLEVEL%) else exit /b %MYERRORLEVEL%
-
-Apps Admin
-----------
-
-	Websphere...=>Profiles=>AppSrv01=>Administrative Console
-
-or
+	stopServer server1
 
 	http://localhost:9060/ibm/console
 	
-
+Test
+----
+	http://pic.dhe.ibm.com/infocenter/wasinfo/v8r0/index.jsp?topic=%2Fcom.ibm.websphere.base.doc%2Finfo%2Faes%2Fae%2Frweb_defapp.html
+	
+	DefaultApplication
+	http://localhost:9080/snoop/
+	http://localhost:9080/HelloHTML.jsp
+	http://localhost:9080/HitCount.jsp
+	
 	http://localhost:9080/ivt/ivtserver?parm2=ivtservlet
 	http://localhost:9080/ivt/ivtserver?parm2=ivtAddition.jsp
 	http://localhost:9080/ivt/ivtserver?parm2=ivtejb
@@ -74,10 +58,6 @@ Document
 --------
 http://www.redbooks.ibm.com/redbooks/pdfs/sg248076.pdf
 http://pic.dhe.ibm.com/infocenter/wasinfo/v8r5/index.jsp
-
-How-To
-------
-	http://tech.ivkin.net/wiki/IBM_WebSphere_Application_Server_How_To
 	
 Labs
 ----
@@ -85,6 +65,29 @@ Labs
 
 mvn
 ===
+
+pom.xml
+
+
+PLEASE NOTE THAT WAS 8.5 DO NOT SUPPORT Java EE 1.7
+PLEASE USE the following in pom.xml
+
+	<dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+	</dependencies>
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
+	
+Optional: To integrate WAS with mvn
+-----------------------------------
 
 	<pluginRepository>
 		 <id>Liberty</id>
@@ -99,7 +102,6 @@ mvn
 	 </releases>
 	 </pluginRepository>
 
-example:
 
 	<build>
 	 <plugins>
